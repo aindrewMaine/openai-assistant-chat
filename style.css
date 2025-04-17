@@ -1,0 +1,234 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #3498db;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#setupPanel, #chatContainer {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.checkbox-group {
+    margin-top: 5px;
+}
+
+.checkbox-group label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+#createAssistantBtn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+#chatWindow {
+    height: 400px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 15px;
+    overflow-y: scroll;
+    margin-bottom: 15px;
+    background: #fcfcfc;
+}
+
+#chatWindow div {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    max-width: 80%;
+}
+
+#chatWindow div.user-message {
+    background: #e3f2fd;
+    margin-left: auto;
+    border-radius: 15px 15px 0 15px;
+}
+
+#chatWindow div.assistant-message {
+    background: #f1f1f1;
+    margin-right: auto;
+    border-radius: 15px 15px 15px 0;
+}
+
+#chatWindow div.system-message {
+    background: #fff3e0;
+    margin: 10px auto;
+    font-style: italic;
+    text-align: center;
+    width: fit-content;
+}
+
+#chatForm {
+    display: flex;
+    gap: 10px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 12px;
+}
+
+.file-upload {
+    margin-bottom: 15px;
+}
+
+.file-label {
+    display: inline-block;
+    background: #e0e0e0;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#fileInput {
+    display: none;
+}
+
+#fileList {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.file-item {
+    background: #f1f8ff;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#assistantStatus {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+#newAssistantBtn {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.status-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.loading {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    border: 1px solid #bbdefb;
+}
+
+.success {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border: 1px solid #c8e6c9;
+}
+
+.error {
+    background-color: #ffebee;
+    color: #b71c1c;
+    border: 1px solid #ffcdd2;
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #3498db;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

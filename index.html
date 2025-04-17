@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Assistant Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Model Assistant</h1>
+        
+        <div id="setupPanel">
+            <h2>Create Assistant</h2>
+            <form id="assistantForm">
+                <div class="form-group">
+                    <label for="assistantName">Assistant Name:</label>
+                    <input type="text" id="assistantName" placeholder="E.g., Data Analyst" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modelSelect">Model:</label>
+                    <select id="modelSelect" required>
+                        <option value="gpt-4o">GPT-4o</option>
+                        <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                        <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="assistantInstructions">Instructions:</label>
+                    <textarea id="assistantInstructions" placeholder="Describe what the assistant should do..." rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Tools:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="codeInterpreter" checked> Code Interpreter</label>
+                        <label><input type="checkbox" id="fileSearch"> File Search</label>
+                    </div>
+                </div>
+                
+                <button type="submit" id="createAssistantBtn">Create Assistant</button>
+                <div id="setupStatus" class="status-message"></div>
+            </form>
+        </div>
+        
+        <div id="chatContainer" style="display: none;">
+            <div class="status-bar">
+                <span id="assistantStatus">No active assistant</span>
+                <button id="newAssistantBtn">Create New Assistant</button>
+            </div>
+            
+            <div id="chatWindow"></div>
+            
+            <div class="file-upload">
+                <label for="fileInput" class="file-label">Upload Files</label>
+                <input type="file" id="fileInput" multiple />
+                <div id="fileList"></div>
+            </div>
+            
+            <form id="chatForm">
+                <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off" required />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
